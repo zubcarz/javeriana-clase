@@ -67,15 +67,24 @@ int throwDice(int *currentSeed)
 
 int main()
 {
-    int currentSeed = 0;
-    int result = 0;
+    // int currentSeed = 0;
+    // int result = 0;
 
-    for (int i = 0; i < 9000; i++)
-    {
-        result = throwDiceTime();
+    // for (int i = 0; i < 9000; i++)
+    // {
+    //     result = throwDiceTime();
 
-        cout << result << endl;
-    }
+    //     cout << result << endl;
+    // }
+
+    int y = 12;
+    int *ptrY = &y;
+
+    cout << y << endl;
+    cout << ptrY << endl;
+    cout << *&*ptrY << endl;
+    cout << ptrY << endl;
 
     return 0;
 }
+
