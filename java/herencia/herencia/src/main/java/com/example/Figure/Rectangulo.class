@@ -1,0 +1,10 @@
+class Rectangulo extends Figure{
+
+    int countSide;
+    int sideWidth;
+    int sideHeight;
+
+    public calcAre(){
+        super.area = sideWidth * sideHeight;
+    }
+}

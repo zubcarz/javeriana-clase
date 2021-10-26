@@ -1,0 +1,15 @@
+class Figura {
+    private int id;
+    private String name;
+    int boxWidth;
+    int boxHeight;
+    int box[];
+    int coordenatesBox[] = {0,0}; 
+    public String background;
+    public int area = 0;
+
+
+    void getName() {
+        return name;
+    }
+}
