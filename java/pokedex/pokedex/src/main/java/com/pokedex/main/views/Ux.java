@@ -1,21 +1,22 @@
-package views;
+package com.pokedex.main.views;
 
 import java.awt.Color;
 import java.awt.Image;
-
 import java.io.IOException;
 import java.net.URL;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import com.pokedex.main.utils.ImagePanel;
+import javax.swing.JScrollPane;
 
 import javax.imageio.ImageIO;
 
 public class Ux {
+
+    private static Ux instance;
 
     private static final int WIDTH_SCREEN = 600;
     private static final int HEIGTH_SCREEN = 600;
@@ -30,9 +31,10 @@ public class Ux {
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         frame.setSize(WIDTH_SCREEN, HEIGTH_SCREEN);
 
+        // panel details
         panelDetail = new JPanel();
         panelDetail.setSize(WIDTH_SCREEN / 2, HEIGTH_SCREEN);
-        // panelDetail.setBackground(Color.blue);
+        panelDetail.setBackground(Color.blue);
 
         imagePokemon = new JLabel();
         imagePokemon.setVerticalAlignment(JLabel.BOTTOM);
@@ -43,16 +45,33 @@ public class Ux {
         imagePokemon.setBackground(new Color(100, 20, 70));
         // this.addImagePanel("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png");
   
-
+        // Panel pokemon
         panelPokemon = new JPanel();
+        panelPokemon.setBackground(Color.red);
         panelPokemon.setSize(WIDTH_SCREEN / 2, HEIGTH_SCREEN);
-        // panelPokemon.setBackground(Color.black);
+
+
+        // panel Scroll
+        JScrollPane scrollPane = new JScrollPane(panelPokemon);
+        // scrollPane.setSize(WIDTH_SCREEN / 2, HEIGTH_SCREEN);
+
+        JButton boton1=new JButton("Finalizar");
+        boton1.setBounds(0,0,200,300);
+        frame.add(scrollPane);
 
         frame.getContentPane().add(panelPokemon);
+        // frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
         frame.add(imagePokemon);
         frame.getContentPane().add(panelDetail);
         frame.setVisible(true);
 
+    }
+
+    public static Ux getInstance() {
+        if (instance == null) {
+            instance = new Ux();
+        }
+        return instance;
     }
 
     public void addImagePanel(String path) {

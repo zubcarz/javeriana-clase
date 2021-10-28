@@ -1,4 +1,4 @@
-package models;
+package com.pokedex.main.models;
 
 public class Sprites {
 

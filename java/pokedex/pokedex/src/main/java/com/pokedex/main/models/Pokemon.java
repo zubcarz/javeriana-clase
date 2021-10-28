@@ -1,13 +1,22 @@
-package models;
+package com.pokedex.main.models;
 
 public class Pokemon {
     int base_experience = 0;
     int id;
     String name;
+    String url;
     double weight = 0;
     double height = 0;
     Sprites sprites;
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+    
     public int getBase_experience() {
         return base_experience;
     }
