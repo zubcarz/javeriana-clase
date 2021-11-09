@@ -39,6 +39,7 @@ public class Ux {
     JFrame frame;
     JLabel imagePokemon;
     static int countButton = 0;
+    
 
     public static Ux getInstance() {
         if (instance == null) {
@@ -77,6 +78,9 @@ public class Ux {
         frame.add(imagePokemon);
         frame.getContentPane().add(panelDetail);
         // frame.setVisible(true);
+
+        // System.out.println(x);
+
 
     }
 
